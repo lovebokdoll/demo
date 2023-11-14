@@ -68,9 +68,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws deploy create-deployment \
-          --application-name demo1 \
-          --deployment-group-name demo-group \
-          --file-exists-behavior OVERWRITE \
-          --s3-location bucket=demo1-deploy,bundleType=zip,key=demo.zip \ 
-          --region ap-northeast-2
+          aws deploy create-deployment --application-name demo1 --deployment-group-name demo-group --file-exists-behavior OVERWRITE --s3-location bucket=demo1-deploy,bundleType=zip,key=demo.zip --region ap-northeast-2
